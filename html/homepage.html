@@ -1,0 +1,97 @@
+<html>
+<head>
+<base target="_self">
+<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" >
+<link rel="stylesheet" href="../bootstrap/css/jquery-ui.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="../bootstrap/css/likes.css">
+<style>
+body
+{
+	background-color:#e9ebee;
+}
+
+#navbar1{
+	background-color:#f4c242;
+	color:black;
+	height:100px;
+	padding-top:20px;
+	margin-left:80px;
+	margin-right:80px;
+}
+a.button {
+   
+    -moz-appearance: button;
+    appearance: button;
+    
+    text-decoration: none;
+    color: initial;
+}
+</style>
+</head>
+
+</body>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid" id="navbar1">
+   
+       <div class="navbar-header">
+            <a href="#">
+               <img alt="facebook" src="../pictures/imdb.png"  class="center" style="width:60px;height:50px">
+            </a>
+       </div>
+   
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+           <ul class="nav navbar-nav">
+           </ul>
+
+         <form class="navbar-form navbar-left">
+       
+              <div class="form-group">
+                  <input type="text" style="color:black;width:400;height:30;" placeholder="Search IMDB"  id="searchName">
+             </div>
+        </form>
+              <div class="navbar-form navbar-center">
+               <div class="quicksearch_dropdown_wrapper">
+      <select name="s" id="quicksearch" class="quicksearch_dropdown navbarSprite"
+              onchange="jumpMenu(this); suggestionsearch_dropdown_choice(this);">
+        <option value="all" selected="selected">All</option>
+        <option value="tt" >Movies</option>
+        <option value="ep" >Actors</option>
+        <option value="nm" >Music</option>
+        </select>
+  
+           <button class="btn default" onclick="return search()" type="submit">
+
+    <span class="glyphicon glyphicon-search" aria-hidden="true">  
+   
+    </span>
+
+</button>
+</div>
+</div>
+</div>
+        
+<div id="megaMenu">
+
+    <ul id="consumer_main_nav" >
+
+  <li id="navTitleMenu" aria-haspopup="true">
+
+  
+
+</li>
+</ul>
+
+</div>
+
+       
+
+          </div><!-- /.navbar-collapse -->
+        
+  </div><!-- /.container-fluid -->
+</nav>
+</body>
+</html>
+
+

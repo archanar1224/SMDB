@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Add cast</title>
+<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" >
+<link rel="stylesheet" href="../bootstrap/css/jquery-ui.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="../bootstrap/css/likes.css">
+<link rel="stylesheet" href="#"> 
+
+<!-- Latest compiled and minified JavaScript -->
+
+<script src="../bootstrap/js/jquery-3.1.1.min.js"></script>
+<script src="../bootstrap/js/jquery-ui.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"> </script> 
+<script src="Add.js"  type='text/javascript'></script>
+<script src="Main.js"  type='text/javascript'></script>
+<script src="Role.js"  type='text/javascript'></script>
+<style type="text/css">
+    .bs-example{
+    	margin: 20px;
+    }
+
+
+
+    
+    .typeahead, .tt-query, .tt-hint {
+	border: 2px solid #CCCCCC;
+	border-radius: 8px;
+	font-size: 22px; /* Set input font size */
+	height: 50px;
+	line-height: 30px;
+	outline: medium none;
+	padding: 8px 12px;
+	width: 100%;
+}
+.inputtext{
+color:white;
+font-size:22px;
+height:70px;
+width:200px;
+align:left;
+
+}
+.add
+{
+border: 2px solid #CCCCCC;
+	border-radius: 8px;
+	font-size: 22px; /* Set input font size */
+	height: 50px;
+	line-height: 30px;
+}
+.typeahead {
+	background-color: #FFFFFF;
+}
+.typeahead:focus {
+	border: 2px solid #0097CF;
+}
+.tt-query {
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+.tt-hint {
+	color: #999999;
+}
+.tt-menu {
+	background-color: #FFFFFF;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 8px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	margin-top: 12px;
+	padding: 8px 0;
+	width: 422px;
+}
+.tt-suggestion {
+	font-size: 22px;  /* Set suggestion dropdown font size */
+	padding: 3px 20px;
+}
+.tt-suggestion:hover {
+	cursor: pointer;
+	background-color: #0097CF;
+	color: #FFFFFF;
+}
+.tt-suggestion p {
+	margin: 0;
+}
+.button
+{
+border: 2px solid #CCCCCC;
+border-radius: 8px;
+background-color:#33fff6;
+height:50px;
+width:150px;
+
+
+}
+
+.columnsContainer{ position: relative; margin: .5em; }
+
+
+
+.leftColumn, .rightColumn{  border: 1px solid  #ccc; padding: 1.25em; }
+
+.leftColumn { margin-bottom: .5em; width:600px ;height:200px }
+.rightColumn { position:absolute; top: 0;right:0; width:600px;height:200px}   
+
+
+.test{
+height:25%;
+width:25%;
+}  
+
+
+</style>
+</head> 
+</head>
+<body onload="getid();" onclick="hidesearch()" style="background-color:#333333">
+<div class="bs-example">
+    <nav role="navigation" class="navbar navbar-default">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand"><img src="../pictures/imdb.png" style="height:30px;padding-bottom:5px"></a>
+        </div>
+        <!-- Collection of nav links and other content for toggling -->
+        <div id="navbarCollapse" class="collapse navbar-collapse" style="height:120px;">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="../">Movies</a></li>
+                <li><a href="../html/people.html">People</a></li>
+                <li><a href="#">Awards</a></li>
+                 <li><a href="http://localhost:8080/IMDB/html/addmovie.html">Add Movie</a></li>
+                <li><a href="http://localhost:8080/IMDB/html/addPerson2.html">Add people</a></li>
+            
+            </ul>
+           
+        </div>
+    </nav>
+        <input type="text" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder="Search for movies,awards,people">
+ <span class="glyphicon glyphicon-search" aria-hidden="true">  
+    </span>
+ </div>  
+ <div align="center">
+<div style="width: 20%; float:left; padding-left:200px">
+  <img id="photo" style="width:300px; height:400px" alter="photo will be displayed"></img>
+</div>
+<div style="width:70%;float:right;padding-right:150px">
+<form id="persondetails">
+<table id="movietable">
+<tr><td></td><td></td></tr>
+<tr>
+
+<td class="inputtext">Name</td>
+<td><label id="name" style="font-size:30px;color:white">Person name</label></td>
+</tr>
+<tr></tr>
+<tr>
+<tr>
+<td class="inputtext">Movie Name</td>
+<td><input type="text" class="add" id="moviename1" onkeyup="getMovieListAdd(this)" placeholder="enter movie name" autocomplete="off"/><input type="text" id="hidden1" style="display:none"><ul id="typeahead-target1" class="tt-menu" data-click="search" style="list-style-type:none;display:none" ></ul></td></tr>
+<tr>
+<td></td>
+<td>
+ 
+ </td>
+</tr>
+
+<td class="inputtext">Role</td><td>
+<select style="height:40px" id="role1"><br>
+<option style="height:30px">Actor</option>
+<option style="height:30px">Director</option>
+<option style="height:30px">Singer</option>
+<option style="height:30px">Lyricist</option>
+</select></td>
+
+
+
+
+
+
+<tr><td></td>
+</table>
+<input id="addrowsbutton" type="button" class="btn btn-primary" onclick="addRows();" value="Add another Movie"/>
+<input type="button" id="submitmoviebutton" class="btn btn-success" onclick="addRole();" value="Submit"/><input type="reset" id="resetcastbutton" class="btn btn-warning" value="Cancel"/>
+
+
+
+
+
+</form>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Movie Database</title>
+<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" >
+<link rel="stylesheet" href="../bootstrap/css/jquery-ui.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="../bootstrap/css/likes.css">
+<link rel="stylesheet" href="#"> 
+
+<!-- Latest compiled and minified JavaScript -->
+
+<script src="../bootstrap/js/jquery-3.1.1.min.js"></script>
+<script src="../bootstrap/js/jquery-ui.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"> </script> 
+<script src="Main.js"  type='text/javascript'></script>
+<script src="Add.js"  type='text/javascript'></script>
+<style type="text/css">
+#myheading
+{
+font-size: 22px;
+outline: medium none;
+padding-top:4px;
+}
+    .bs-example{
+    	margin: 20px;
+    }
+
+
+
+    
+    .typeahead, .tt-query, .tt-hint {
+	border: 2px solid #CCCCCC;
+	border-radius: 8px;
+	font-size: 22px; /* Set input font size */
+	height: 50px;
+	line-height: 30px;
+	outline: medium none;
+	padding: 8px 12px;
+	width: 100%;
+}
+.typeahead {
+	background-color: #FFFFFF;
+}
+.typeahead:focus {
+	border: 2px solid #0097CF;
+}
+.tt-query {
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+.tt-hint {
+	color: #999999;
+}
+.tt-menu {
+	background-color: #FFFFFF;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 8px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	margin-top: 12px;
+	padding: 8px 0;
+	width: 1000px;
+}
+.tt-suggestion {
+	font-size: 22px;  /* Set suggestion dropdown font size */
+	padding: 3px 20px;
+}
+.tt-suggestion:hover {
+	cursor: pointer;
+	background-color: #0097CF;
+	color: #FFFFFF;
+}
+.tt-suggestion p {
+	margin: 0;
+}
+
+.columnsContainer{ position: relative; margin: .5em; }
+
+
+
+.leftColumn, .rightColumn{  border: 1px solid  #ccc; padding: 1.25em; }
+
+.leftColumn { margin-bottom: .5em; width:600px ;height:200px }
+.rightColumn { position:absolute; top: 0;right:0; width:600px;height:200px}   
+
+
+.test{
+height:25%;
+width:25%;
+}  
+
+
+</style>
+</head> 
+<body onload=" return gettoppeople1();" onclick="return hidesearch()" style="background-color:#333333">
+<div class="bs-example">
+    <nav role="navigation" class="navbar navbar-default">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand"><img src="http://localhost:8080/IMDB/files/smdb.png" style="height:30px;padding-bottom:5px;width:100px"></a>
+        </div>
+        <!-- Collection of nav links and other content for toggling -->
+        <div id="navbarCollapse" class="collapse navbar-collapse" style="height:120px;">
+            <ul class="nav navbar-nav">
+                <li class="active" ><a href="../">Movies</a></li>
+                <li><a href="http://localhost:8080/IMDB/html/people.html">People</a></li>
+                <li><a href="#">Awards</a></li>
+                
+                <li><a href="http://localhost:8080/IMDB/html/addmovie.html">Add Movie</a></li>
+                <li><a href="http://localhost:8080/IMDB/html/addPerson2.html">Add people</a></li>
+            </ul>
+           
+        </div>
+    </nav>
+    
+        <input type="text"  onkeyup="return getlist();" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder="Search for movies,awards,people" id="searchtext">
+ </div>
+    
+    <div id="typeahead-targetdiv" class="tt-menu" data-click="search" style="list-style-type:none;display:none" ></div>
+    
+        <div class="panel panel-default"  style="margin-top:20px"></div>
+        <div id="myheading" class="panel-heading" style="height:20px;color:white;" align="center">Featured People</div>
+        <div class="panel-body" style="height:450px">
+     	 <table class="table table-unbordered">
+      <tr>
+      <td class="test" id="pane1"></td>
+      <td class="test" id="pane2"></td>
+      <td class="test" id="pane3"></td>
+      <td class="test" id="pane4"></td>
+        
+      
+      
+      </tr>
+      </table>
+    
+      <div class="panel-footer" style=" height:500px;background-color:#333333"></div>
+</body>
+</html>                                		
